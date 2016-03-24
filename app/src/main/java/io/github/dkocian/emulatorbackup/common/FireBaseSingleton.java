@@ -6,7 +6,7 @@ public class FireBaseSingleton {
     private static Firebase mFirebaseRef;
 
     private FireBaseSingleton() {
-        mFirebaseRef = new Firebase("https://" + Urls.BASE_URL + "/");
+        mFirebaseRef = new Firebase(Urls.HTTPS + Urls.BASE_URL + Constants.F_SLASH);
     }
 
     private static class SingletonHolder {

@@ -28,7 +28,7 @@ public class ExternalStorageReaderWriter {
             while ((line = br.readLine()) != null) {
                 text.append(line);
             }
-            byte[] data = text.toString().getBytes("UTF-8");
+            byte[] data = text.toString().getBytes(Constants.UTF_8);
             base64 = Base64.encodeToString(data, Base64.DEFAULT);
             br.close();
         } catch (IOException e) {
@@ -39,7 +39,7 @@ public class ExternalStorageReaderWriter {
 
     public void writeFile(String fileName, String base64String) throws IOException {
         byte[] decode = Base64.decode(base64String, Base64.DEFAULT);
-        FileOutputStream fileOutputStream = new FileOutputStream(Environment.getExternalStoragePublicDirectory(Constants.MY_BOY_SAVE).getPath() + "/" + fileName);
+        FileOutputStream fileOutputStream = new FileOutputStream(Environment.getExternalStoragePublicDirectory(Constants.MY_BOY_SAVE).getPath() + Constants.F_SLASH + fileName);
         fileOutputStream.write(decode);
         fileOutputStream.close();
     }

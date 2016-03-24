@@ -25,6 +25,7 @@ import static io.github.dkocian.emulatorbackup.common.RegexPatterns.MATCH_PERIOD
 public class MainPresenter implements MainContract.UserActionListener {
     public static final String TAG = MainPresenter.class.getName();
     public static final String FILE_NAME = "FileName:";
+    public static final String SIZE_MSG = "Size: ";
 
     MainContract.MainView mainView;
 
@@ -44,7 +45,7 @@ public class MainPresenter implements MainContract.UserActionListener {
     @Override
     public void saveFileSaveData() {
         File[] saveFiles = getSaveFiles();
-        Log.d(TAG, "Size: " + saveFiles.length);
+        Log.d(TAG, SIZE_MSG + saveFiles.length);
         for (File file : saveFiles) {
             String[] fileNameArray = file.getName().split(MATCH_PERIODS);
             String extension = fileNameArray[fileNameArray.length - 1];
@@ -74,9 +75,9 @@ public class MainPresenter implements MainContract.UserActionListener {
                     String base64OfFile = (String) postSnapshot.getValue();
                     ExternalStorageReaderWriter externalStorageReaderWriter = new ExternalStorageReaderWriter();
                     try {
-                        int indexOfDash = key.lastIndexOf("-");
+                        int indexOfDash = key.lastIndexOf(Constants.DASH);
                         StringBuilder fileNameBuilder = new StringBuilder(key);
-                        fileNameBuilder.setCharAt(indexOfDash, '.');
+                        fileNameBuilder.setCharAt(indexOfDash, Constants.CHAR_DOT);
                         externalStorageReaderWriter.writeFile(fileNameBuilder.toString(), base64OfFile);
                         mainView.showFileRetrievedSnackBar();
                     } catch (IOException e) {
