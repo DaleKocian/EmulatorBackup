@@ -37,11 +37,11 @@ public class MainActivity extends AppCompatActivity implements MainContract.Main
 
     @Override
     public void showFileSavedSnackBar() {
-        Snackbar.make(rlWrapper, "Files Saved", Snackbar.LENGTH_SHORT).show();
+        Snackbar.make(rlWrapper, R.string.file_saved, Snackbar.LENGTH_SHORT).show();
     }
 
     @Override
     public void showFileRetrievedSnackBar() {
-        Snackbar.make(rlWrapper, "Files Retrieved", Snackbar.LENGTH_SHORT).show();
+        Snackbar.make(rlWrapper, R.string.file_retrieved, Snackbar.LENGTH_SHORT).show();
     }
 }

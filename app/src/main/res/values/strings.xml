@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">EmulatorBackup</string>
+    <string name="file_saved">Files Saved</string>
+    <string name="file_retrieved">Files Retrieved</string>
 </resources>
