@@ -6,4 +6,5 @@ public class Constants {
     public static final String F_SLASH = "/";
     public static final String DASH = "-";
     public static final char CHAR_DOT = '.';
+    public static final String TOPICS = "/topics/";
 }

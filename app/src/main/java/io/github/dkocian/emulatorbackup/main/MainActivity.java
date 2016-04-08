@@ -5,6 +5,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.RelativeLayout;
 
+import com.google.android.gms.common.GooglePlayServicesUtil;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -45,5 +47,9 @@ public class MainActivity extends AppCompatActivity implements MainContract.Main
     @Override
     public void showFileRetrievedSnackBar() {
         Snackbar.make(rlWrapper, R.string.file_retrieved, Snackbar.LENGTH_SHORT).show();
+    }
+
+    private boolean checkPlayServices() {
+//        int result = GooglePlayServicesUtil.
     }
 }
