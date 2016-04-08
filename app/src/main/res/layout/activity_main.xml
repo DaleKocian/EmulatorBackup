@@ -20,7 +20,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save Data"
+        android:text="@string/save_data"
         android:id="@+id/btnSaveData"
         android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
@@ -30,7 +30,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Get Data"
+        android:text="@string/get_data"
         android:id="@+id/btnGetData"
         android:layout_below="@+id/btnSaveData"
         android:layout_alignParentLeft="true"

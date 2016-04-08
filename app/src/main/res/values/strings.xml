@@ -2,4 +2,6 @@
     <string name="app_name">EmulatorBackup</string>
     <string name="file_saved">Files Saved</string>
     <string name="file_retrieved">Files Retrieved</string>
+    <string name="save_data">Save Data</string>
+    <string name="get_data">Get Data</string>
 </resources>
