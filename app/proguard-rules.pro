@@ -57,7 +57,15 @@
 -dontwarn javax.annotation.**
 -dontwarn javax.inject.**
 -dontwarn sun.misc.Unsafe
+
 # Guava 19.0
 -dontwarn java.lang.ClassValue
 -dontwarn com.google.j2objc.annotations.Weak
 -dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+
+# gradle-retrolambda
+-dontwarn java.lang.invoke.*
+
+# Lightweight-Stream-API
+-keepattributes EnclosingMethod
+-dontwarn com.annimon.stream.**
