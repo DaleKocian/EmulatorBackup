@@ -2,7 +2,7 @@ package io.github.dkocian.emulatorbackup.main;
 
 import io.github.dkocian.emulatorbackup.common.Presenter;
 
-public class MainContract {
+class MainContract {
 
     interface UserActionListener extends Presenter {
         void saveFileSaveData();

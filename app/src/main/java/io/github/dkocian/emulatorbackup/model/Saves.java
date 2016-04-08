@@ -2,6 +2,6 @@ package io.github.dkocian.emulatorbackup.model;
 
 import java.util.List;
 
-public class Saves {
+class Saves {
     List<SaveFiles> saveFilesList;
 }
