@@ -12,8 +12,10 @@ import io.github.dkocian.emulatorbackup.R;
 
 public class MainActivity extends AppCompatActivity implements MainContract.MainView {
     private static final String TAG = MainActivity.class.getName();
+
     @Bind(R.id.rlWrapper)
     RelativeLayout rlWrapper;
+
     private MainContract.UserActionListener userActionListener;
 
     @Override

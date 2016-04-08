@@ -6,13 +6,13 @@ import android.content.Context;
 import com.firebase.client.Firebase;
 
 public class MyApplication extends Application {
-    static Context context;
+    private static Context context;
+
     @Override
     public void onCreate() {
         super.onCreate();
         Firebase.setAndroidContext(this);
-        this.context = this;
-
+        context = this;
     }
 
     public static Context getMyApplicationContext() {

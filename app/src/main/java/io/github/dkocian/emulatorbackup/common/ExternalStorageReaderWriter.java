@@ -10,31 +10,25 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 
-/**
- * Created by dalek on 3/24/2016.
- */
 public class ExternalStorageReaderWriter {
     private static final String TAG = ExternalStorageReaderWriter.class.getName();
     StringBuilder text = new StringBuilder();
 
-    public ExternalStorageReaderWriter() {
-    }
-
-    public String readFile(File file) {
-        String base64 = "";
+    public byte[] getFileContents(File file) {
+        byte[] fileContents;
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
             String line;
             while ((line = br.readLine()) != null) {
                 text.append(line);
             }
-            byte[] data = text.toString().getBytes(Constants.UTF_8);
-            base64 = Base64.encodeToString(data, Base64.DEFAULT);
+            fileContents = text.toString().getBytes(Constants.UTF_8);
             br.close();
         } catch (IOException e) {
+            fileContents = null;
             Log.e(TAG, e.getMessage());
         }
-        return base64;
+        return fileContents;
     }
 
     public void writeFile(String fileName, String base64String) throws IOException {
