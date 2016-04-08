@@ -30,10 +30,11 @@ dependencies {
     compile 'com.android.support:design:23.3.0'
     compile 'com.android.support:support-annotations:23.3.0'
     compile 'com.android.support:appcompat-v7:23.3.0'
-//    compile 'com.google.android.gms:play-services:8.4.0'
     compile 'com.firebase:firebase-client-android:2.5.2'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.google.guava:guava:19.0'
     compile 'me.tatarka:gradle-retrolambda:3.3.0-beta4'
     compile 'com.annimon:stream:1.0.8'
+    compile 'com.google.android.gms:play-services-auth:8.4.0'
+    compile 'com.google.android.gms:play-services-gcm:8.4.0'
 }
