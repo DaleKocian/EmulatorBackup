@@ -143,12 +143,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
     }
 
     private void revokeAccess() {
-        Auth.GoogleSignInApi.revokeAccess(mGoogleApiClient).setResultCallback(
-                status -> {
-                    // [START_EXCLUDE]
-                    updateUI(false);
-                    // [END_EXCLUDE]
-                });
+        Auth.GoogleSignInApi.revokeAccess(mGoogleApiClient).setResultCallback(status -> updateUI(false));
     }
 
     private void signIn() {
@@ -157,12 +152,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
     }
 
     private void signOut() {
-        Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
-                status -> {
-                    // [START_EXCLUDE]
-                    updateUI(false);
-                    // [END_EXCLUDE]
-                });
+        Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(status -> updateUI(false));
     }
 
     @Override
