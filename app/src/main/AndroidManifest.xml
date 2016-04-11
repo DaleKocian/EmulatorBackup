@@ -2,16 +2,6 @@
 <manifest package="io.github.dkocian.emulatorbackup"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- [START gcm_permission] -->
-    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <!-- [END gcm_permission] -->
-
-    <permission
-        android:name="io.github.dkocian.emulatorbackup.permission.C2D_MESSAGE"
-        android:protectionLevel="signature"/>
-    <uses-permission android:name="io.github.dkocian.emulatorbackup.permission.C2D_MESSAGE"/>
-
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -26,7 +16,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".main.MainActivity">
+        <activity android:name=".googlesignin.SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -43,40 +33,6 @@
                     android:scheme="https"/>
             </intent-filter>
         </activity>
-
-        <receiver
-            android:name="com.google.android.gms.gcm.GcmReceiver"
-            android:exported="true"
-            android:permission="com.google.android.c2dm.permission.SEND">
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
-                <category android:name="gcm.play.android.samples.com.gcmquickstart"/>
-            </intent-filter>
-        </receiver>
-
-        <service
-            android:name=".messaging.MyGcmListenerService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
-            </intent-filter>
-        </service>
-
-        <service
-            android:name=".messaging.RegistrationIntentService"
-            android:exported="false"/>
-
-        <service
-            android:name=".messaging.MyInstanceIDListenerService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.android.gms.iid.InstanceID"/>
-            </intent-filter>
-        </service>
-
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version"/>
     </application>
 
 </manifest>
