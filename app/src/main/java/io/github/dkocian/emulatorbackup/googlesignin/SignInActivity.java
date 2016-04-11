@@ -18,8 +18,6 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.OptionalPendingResult;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
 
 import io.github.dkocian.emulatorbackup.R;
 
@@ -93,12 +91,9 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
             // this asynchronous branch will attempt to sign in the user silently.  Cross-device
             // single sign-on will occur in this branch.
             showProgressDialog();
-            opr.setResultCallback(new ResultCallback<GoogleSignInResult>() {
-                @Override
-                public void onResult(GoogleSignInResult googleSignInResult) {
-                    hideProgressDialog();
-                    handleSignInResult(googleSignInResult);
-                }
+            opr.setResultCallback(googleSignInResult -> {
+                hideProgressDialog();
+                handleSignInResult(googleSignInResult);
             });
         }
     }
@@ -149,13 +144,10 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
 
     private void revokeAccess() {
         Auth.GoogleSignInApi.revokeAccess(mGoogleApiClient).setResultCallback(
-                new ResultCallback<Status>() {
-                    @Override
-                    public void onResult(Status status) {
-                        // [START_EXCLUDE]
-                        updateUI(false);
-                        // [END_EXCLUDE]
-                    }
+                status -> {
+                    // [START_EXCLUDE]
+                    updateUI(false);
+                    // [END_EXCLUDE]
                 });
     }
 
@@ -166,13 +158,10 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
 
     private void signOut() {
         Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
-                new ResultCallback<Status>() {
-                    @Override
-                    public void onResult(Status status) {
-                        // [START_EXCLUDE]
-                        updateUI(false);
-                        // [END_EXCLUDE]
-                    }
+                status -> {
+                    // [START_EXCLUDE]
+                    updateUI(false);
+                    // [END_EXCLUDE]
                 });
     }
 
