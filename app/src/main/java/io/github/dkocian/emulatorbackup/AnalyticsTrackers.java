@@ -5,6 +5,7 @@ import android.content.Context;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
 
+import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,32 +19,32 @@ import java.util.Map;
  * TODO: Call {@link #initialize(Context)} from an entry point in your app
  * before using this!
  */
-public final class AnalyticsTrackers {
+final class AnalyticsTrackers {
 
-  public enum Target {
+  private enum Target {
     APP,
     // Add more trackers here if you need, and update the code in #get(Target) below
   }
 
-  private static AnalyticsTrackers sInstance;
+  private static WeakReference<AnalyticsTrackers> sInstance;
 
-  public static synchronized void initialize(Context context) {
+  private static synchronized void initialize(final Context context) {
     if (sInstance != null) {
       throw new IllegalStateException("Extra call to initialize analytics trackers");
     }
 
-    sInstance = new AnalyticsTrackers(context);
+    sInstance = new WeakReference<>(new AnalyticsTrackers(context));
   }
 
-  public static synchronized AnalyticsTrackers getInstance() {
+  private static synchronized AnalyticsTrackers getInstance() {
     if (sInstance == null) {
       throw new IllegalStateException("Call initialize() before getInstance()");
     }
 
-    return sInstance;
+    return sInstance.get();
   }
 
-  private final Map<Target, Tracker> mTrackers = new HashMap<Target, Tracker>();
+  private final Map<Target, Tracker> mTrackers = new HashMap<>();
   private final Context mContext;
 
   /**

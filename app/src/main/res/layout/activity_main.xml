@@ -23,7 +23,6 @@
         android:text="@string/save_data"
         android:id="@+id/btnSaveData"
         android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="29dp"/>
 
@@ -33,7 +32,6 @@
         android:text="@string/get_data"
         android:id="@+id/btnGetData"
         android:layout_below="@+id/btnSaveData"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="42dp"/>
 </RelativeLayout>

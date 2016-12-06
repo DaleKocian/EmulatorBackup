@@ -20,14 +20,14 @@ import io.github.dkocian.emulatorbackup.common.FireBaseSingleton;
 
 import static io.github.dkocian.emulatorbackup.common.RegexPatterns.MATCH_MY_BOY_SAVE_DATA;
 
-public class MainPresenter implements MainContract.UserActionListener {
+class MainPresenter implements MainContract.UserActionListener {
     private static final String TAG = MainPresenter.class.getName();
     private static final String FILE_NAME = "FileName:";
     private static final String SIZE_MSG = "Size: ";
 
     private final MainContract.MainView mainView;
 
-    public MainPresenter(MainContract.MainView mainView) {
+    MainPresenter(MainContract.MainView mainView) {
         this.mainView = mainView;
     }
 

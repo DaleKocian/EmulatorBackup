@@ -22,10 +22,6 @@ import com.google.android.gms.common.api.OptionalPendingResult;
 
 import io.github.dkocian.emulatorbackup.R;
 
-/**
- * Created by pln6477 on 4/8/16.
- */
-
 public class SignInActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, View.OnClickListener {
     public static final String TAG = SignInActivity.class.getSimpleName();
     private static final int RC_SIGN_IN = 9001;
@@ -72,7 +68,9 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
         // Scopes.PLUS_LOGIN scope to the GoogleSignInOptions to see the
         // difference.
         mSignInButton.setSize(SignInButton.SIZE_STANDARD);
-        mSignInButton.setScopes(gso.getScopeArray());
+//        mSignInButton.setScopes(gso.getScopeArray());
+        mSignInButton.setStyle(mSignInButton.getWidth(), mSignInButton.getSolidColor());
+//        mSignInButton.setStyle(this.mSize, this.mColor);
         // [END customize_button]
     }
 

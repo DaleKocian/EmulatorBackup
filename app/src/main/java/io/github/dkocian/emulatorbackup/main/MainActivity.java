@@ -5,7 +5,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.RelativeLayout;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.github.dkocian.emulatorbackup.R;
@@ -13,7 +13,7 @@ import io.github.dkocian.emulatorbackup.R;
 public class MainActivity extends AppCompatActivity implements MainContract.MainView {
     private static final String TAG = MainActivity.class.getName();
 
-    @Bind(R.id.rlWrapper)
+    @BindView(R.id.rlWrapper)
     RelativeLayout rlWrapper;
 
     private MainContract.UserActionListener userActionListener;

@@ -3,7 +3,6 @@
               android:id="@+id/main_layout"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@color/blue_grey_700"
               android:orientation="vertical"
               android:weightSum="4"
               tools:context=".googlesignin.SignInActivity">
